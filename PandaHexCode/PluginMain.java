@@ -45,14 +45,16 @@ public class PluginMain extends JavaPlugin{
 		getServer().getPluginManager().registerEvents(new PlayerCommandPreprocessListener(), this);
 		getServer().getPluginManager().registerEvents(new ServerCommandListener(), this);
 		getServer().getPluginManager().registerEvents(new PlayerDeathListener(), this);
-		
+
 		/*Commands*/
 		StandartArrayCommands.Register();
 		new Test("test");
 		new AntiStop("antistop");
 		new InventoryCommands.CloseInv("closeinv");
 		new InventoryCommands.Invsee("invsee");
+		new InventoryCommands.InvseeArmor("invseearmor");
 		new InventoryCommands.Workbench("workbench");
+		new InventoryCommands.SetArmorSlot("setarmorslot");
 		new ClientSideCommands.ClientSideBlock("clientsideblock");
 		new ClientSideCommands.ClientSideSchlong("clientsideschlong");
 		new ClientSideCommands.ClientSideBlockRadius("clientsideblockradius");
