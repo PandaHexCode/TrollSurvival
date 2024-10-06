@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import org.bukkit.Location;
 import org.bukkit.Material;
+import org.bukkit.TreeType;
 import org.bukkit.command.Command;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;
@@ -19,11 +20,7 @@ public class Test extends ChatCommandTarget{
 	
 	@Override
 	public void onNewCommand(Player sender, Player otherPlayer, Command command, String[] arg){
-		for(Entity e : sender.getWorld().getEntities()) {
-			  if(!(e instanceof Player)){
-				  
-			  }
-		}
+		sender.getWorld().generateTree(otherPlayer.getLocation(), TreeType.BIG_TREE);
 	}
 
 }

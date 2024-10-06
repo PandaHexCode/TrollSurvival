@@ -45,7 +45,9 @@ public class PluginMain extends JavaPlugin{
 		getServer().getPluginManager().registerEvents(new PlayerCommandPreprocessListener(), this);
 		getServer().getPluginManager().registerEvents(new ServerCommandListener(), this);
 		getServer().getPluginManager().registerEvents(new PlayerDeathListener(), this);
-
+		getServer().getPluginManager().registerEvents(new ItemClickEvent(), this);
+		getServer().getPluginManager().registerEvents(new PlayerResourcePackStatusListener(), this);
+		
 		/*Commands*/
 		StandartArrayCommands.Register();
 		new Test("test");
@@ -104,6 +106,7 @@ public class PluginMain extends JavaPlugin{
 		new SaveLoadPositions.ListPositionsCMD("savedpositionslist");
 		new SaveLoadPositions.DeletePositionCmd("deleteposition");
 		new TerrainCommands.TerrainFly("terrainfly");
+		new TerrainCommands.TerrainFlyDown("terrainflydown");
 		new TerrainCommands.Rocket("rocket");
 		
 		if(ISGRIEFVERSION){

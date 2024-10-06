@@ -44,6 +44,11 @@ public class BlockPlaceListener implements Listener{
 				e.setCancelled(true);
 		}
 		
+		if(StandartArrayCommands.clientSidePlaceArray.targetPlayers.contains(p.getName())){
+			for(int i = 1; i < 5; i++){
+				p.sendBlockChange(loc.add(0, 0, 1), mat.createBlockData());
+			}
+		}
 	}
 	
 }

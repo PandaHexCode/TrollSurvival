@@ -16,7 +16,7 @@ import PandaHexCode.PluginMain;
 
 public class TerrainCommands{
 	
-	public static class TerrainFly extends ChatCommand{/*Currently broken*/
+	public static class TerrainFly extends ChatCommand{
 		private BukkitRunnable task;
 		
 		public TerrainFly(String command) {
@@ -64,7 +64,7 @@ public class TerrainCommands{
 	        
 	        task.runTaskTimer(PluginMain.instance, 5L, 5L);
 
-	        player.sendMessage(PluginMain.PR + "Blöcke werden bewegt!");
+	        player.sendMessage(PluginMain.PR + "Woooh!");
 		    return true;
 		}
 	}
@@ -99,6 +99,58 @@ public class TerrainCommands{
 	        task.runTaskTimer(PluginMain.instance, 0L, 0L);
 		}
 		
+	}
+	
+	public static class TerrainFlyDown extends ChatCommand{
+		private BukkitRunnable task;
+		
+		public TerrainFlyDown(String command) {
+			super(command);
+		}
+		@Override
+		public boolean onCommand(CommandSender arg0, Command arg1, String arg2, String[] arg3){
+			Player player = (Player) arg0;
+			Location loc = player.getLocation();
+			
+	        ArrayList<Location> locations = PluginMain.GetLocationsInRadius(loc, 5, false, true);
+
+	        ArrayList<BlockState> blockStates = new ArrayList<>();
+	        for (Location location : locations) {
+	            blockStates.add(location.getBlock().getState());
+	        }
+
+	        final int maxSteps = 5;
+	        
+	        task = new BukkitRunnable() {
+	            int step = 0;
+
+	            @Override
+	            public void run() {
+	                if (step >= maxSteps) {
+	                    this.cancel();
+	                    return;
+	                }
+	                
+	                for (BlockState blockState : blockStates) {
+	                    Location originalLoc = blockState.getLocation();
+	                    Location newLoc = originalLoc.clone().add(0, -step, 0);
+
+	                    if (newLoc.getBlock().getType() != Material.AIR) 
+	                    	newLoc.getBlock().breakNaturally();
+	                    	
+	                    newLoc.getBlock().setType(blockState.getType());
+	                    newLoc.getBlock().setBlockData(blockState.getBlockData());
+	                }
+	                
+	                step++;
+	            }
+	        };
+	        
+	        task.runTaskTimer(PluginMain.instance, 5L, 5L);
+
+	        player.sendMessage(PluginMain.PR + "Woooh!");
+		    return true;
+		}
 	}
 	
 }

@@ -196,20 +196,25 @@ public class SimpleCommands{
 		public static ItemStack item = null;
 		@Override
 		public void onNewCommand(Player sender, Player otherPlayer, Command command, String[] arg){
-			PluginMain.SendTitleToAll("§c§lRandom§e§lItem", "§b§lEvent", 10, 50, 10, true);
+			PluginMain.PlaySoundToAll(Sound.BLOCK_BEACON_ACTIVATE);
+			PluginMain.SendTitleToAll("§c§lRandom§e§lItem", "§b§lEvent §e§l@" + otherPlayer.getName(), 10, 50, 10, true);
 			
 			  new BukkitRunnable() {
 	                @Override
-	                public void run() {
+	                public void run(){
 	                    item = null;
+	                    Random random = new Random();
+        			    int i = random.nextInt(20);
+        			    if(i < 1)
+        			    	i = 1;
 	        			while(item == null){
 	        				Material[] materials = Material.values();
-	        			    Random random = new Random();
 	        			    Material randomMaterial = materials[random.nextInt(materials.length)];
-	        			    item = new ItemStack(randomMaterial);
+	        			    item = new ItemStack(randomMaterial, i);
 	        			}
 	        		    otherPlayer.getInventory().addItem(item);
-	        		    PluginMain.SendTitleToAll("§b§l"+item.getType().name(), "§e§lCongratulations!", 10, 50, 10, true);
+	        		    PluginMain.SendTitleToAll("§b§l"+item.getType().name() + " x " + i, "§e§lCongratulations!", 10, 50, 10, true);
+	        		    PluginMain.PlaySoundToAll(Sound.ENTITY_PLAYER_LEVELUP);
 	                }
 	            }.runTaskLater(PluginMain.instance, 120);
 		}
@@ -218,10 +223,9 @@ public class SimpleCommands{
 	public static class EventPicker extends ChatCommand{
 		public EventPicker(String command){
 			super(command);
-			   names.add("BuildBattle");
 	            names.add("Quiz");
-	            names.add("TruhenGlücksSpiel");
-	            names.add("Eleytra");
+	            names.add("Lucky chest");
+	            names.add("Fight");
 		}
 	
 		private ArrayList<String> names = new ArrayList<>();
@@ -279,11 +283,11 @@ public class SimpleCommands{
 		public static class PunishmentPicker extends ChatCommand{
 			public PunishmentPicker(String command){
 				super(command);
-				   names.add("ItemDiebstahl(3)");
-		            names.add("MoreMobs");
-		            names.add("NewEvent");
-		            names.add("ItemDiebstahl(2)");
-		            names.add("NullDamageFor10Minutes");
+				   names.add("Item theft(3)");
+		            names.add("More mobs");
+		            names.add("New event");
+		            names.add("Item theft(2)");
+		            names.add("NullDamage for 10Minutes");
 			}
 		
 			private ArrayList<String> names = new ArrayList<>();

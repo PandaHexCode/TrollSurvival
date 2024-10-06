@@ -30,6 +30,8 @@ public class StandartArrayCommands{
 	public static ChatCommandArray glide;
 	public static ChatCommandArray movelag;
 	public static ChatCommandArray autojump;
+	
+	public static ChatCommandArray clientSidePlaceArray;
 	public static void Register(){
 		freeze = new ChatCommandArray("freeze");
 		freezeRotation = new ChatCommandArray("freezerotation");
@@ -59,6 +61,8 @@ public class StandartArrayCommands{
 		glide = new ChatCommandArray("glide");
 		movelag = new ChatCommandArray("movelag");
 		autojump = new ChatCommandArray("autojump");
+		
+		clientSidePlaceArray = new ChatCommandArray("clientsideplacearray");
 	}
 	
 }
