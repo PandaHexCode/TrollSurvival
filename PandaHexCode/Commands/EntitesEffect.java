@@ -1,6 +1,7 @@
 package PandaHexCode.Commands;
 
 import org.bukkit.Bukkit;
+import org.bukkit.Material;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Entity;
@@ -15,6 +16,7 @@ public class EntitesEffect extends ChatCommand{
 
 	public EntitesEffect(String command) {
 		super(command);
+		this.helpMaterial = Material.ZOMBIE_HEAD;
 	}
 
 	@Override
@@ -56,6 +58,7 @@ public class EntitesEffect extends ChatCommand{
 	public static class ClearEntitiesEffect extends ChatCommand{
 		public ClearEntitiesEffect(String command) {
 			super(command);
+			this.helpMaterial = Material.MILK_BUCKET;
 		}
 		
 		@Override

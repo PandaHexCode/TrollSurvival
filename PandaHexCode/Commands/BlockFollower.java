@@ -1,6 +1,7 @@
 package PandaHexCode.Commands;
 
 import org.bukkit.Bukkit;
+import org.bukkit.Material;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
@@ -11,7 +12,7 @@ public class BlockFollower extends ChatCommand{
 
 	public BlockFollower(String command) {
 		super(command);
-		
+		this.helpMaterial = Material.DIRT;
 	}
 
 	public static boolean isIn = false;

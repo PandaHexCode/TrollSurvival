@@ -3,6 +3,7 @@ package PandaHexCode.Commands;
 import java.util.ArrayList;
 
 import org.bukkit.Bukkit;
+import org.bukkit.Material;
 import org.bukkit.command.Command;
 
 import org.bukkit.command.CommandSender;
@@ -15,7 +16,7 @@ import PandaHexCode.PluginMain;
 public class Vanish extends ChatCommand{
 	public Vanish(String command) {
 		super(command);
-		
+		this.helpMaterial = Material.PLAYER_HEAD;
 	}
 
 	public static ArrayList<String> playersInVanish = new ArrayList<String>();

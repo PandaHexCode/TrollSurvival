@@ -22,6 +22,7 @@ public class InventoryCommands{
 	public static class CloseInv extends ChatCommandTarget{	
 		public CloseInv(String command) {
 			super(command);
+			this.helpMaterial = Material.BARRIER;
 		}
 		@Override
 		public void onNewCommand(Player sender, Player otherPlayer, Command command, String[] arg){
@@ -32,6 +33,7 @@ public class InventoryCommands{
 	public static class Invsee extends ChatCommandTarget{	
 		public Invsee(String command) {
 			super(command);
+			this.helpMaterial = Material.DIAMOND_SWORD;
 		}
 		@Override
 		public void onNewCommand(Player sender, Player otherPlayer, Command command, String[] arg){
@@ -42,6 +44,7 @@ public class InventoryCommands{
 	public static class InvseeArmor extends ChatCommandTarget{	
 		public InvseeArmor(String command) {
 			super(command);
+			this.helpMaterial = Material.DIAMOND_CHESTPLATE;
 		}
 		@Override
 		public void onNewCommand(Player sender, Player otherPlayer, Command command, String[] arg){
@@ -63,6 +66,7 @@ public class InventoryCommands{
 	public static class SetArmorSlot extends ChatCommandTarget{	
 		public SetArmorSlot(String command) {
 			super(command);
+			this.helpMaterial = Material.DIAMOND_CHESTPLATE;
 		}
 		@Override
 		public void onNewCommand(Player sender, Player otherPlayer, Command command, String[] arg){

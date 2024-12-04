@@ -2,6 +2,7 @@ package PandaHexCode.Commands;
 
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
+import org.bukkit.Material;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Entity;
@@ -21,6 +22,7 @@ public class EntityCommands{
 			minArg = 2;
 			recString = "/" + command + " §e<PlayerName> <EntityName> <AI true|false>";
 			defaultMessage = false;
+			this.helpMaterial = Material.CREEPER_HEAD;
 		}
 		@Override
 		public void onNewCommand(Player sender, Player otherPlayer, Command command, String[] arg){
@@ -48,6 +50,7 @@ public class EntityCommands{
 		private BukkitRunnable task;
 		public EntityFollower(String command){
 			super(command);
+			this.helpMaterial = Material.CREEPER_HEAD;
 		}
 
 		@Override
@@ -116,6 +119,7 @@ public class EntityCommands{
 	public static class EntityDisableGravity extends ChatCommand{
 		public EntityDisableGravity(String command){
 			super(command);
+			this.helpMaterial = Material.BARRIER;
 		}
 		@Override
 		public boolean onCommand(CommandSender arg0, Command arg1, String arg2, String[] arg3){

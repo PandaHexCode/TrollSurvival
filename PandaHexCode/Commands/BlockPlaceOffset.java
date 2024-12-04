@@ -3,6 +3,7 @@ package PandaHexCode.Commands;
 import java.util.ArrayList;
 
 import org.bukkit.Bukkit;
+import org.bukkit.Material;
 import org.bukkit.command.Command;
 
 import org.bukkit.command.CommandSender;
@@ -15,6 +16,7 @@ public class BlockPlaceOffset extends ChatCommand{
 
 	public BlockPlaceOffset(String command) {
 		super(command);
+		this.helpMaterial = Material.GRASS_BLOCK;
 	}
 
 	public static ArrayList<TargetPlayer> targetPlayers = new ArrayList<TargetPlayer>();

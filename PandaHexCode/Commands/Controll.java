@@ -1,6 +1,7 @@
 package PandaHexCode.Commands;
 
 import org.bukkit.Bukkit;
+import org.bukkit.Material;
 import org.bukkit.command.Command;
 
 import org.bukkit.command.CommandSender;
@@ -12,7 +13,7 @@ public class Controll extends ChatCommand{
 
 	public Controll(String command) {
 		super(command);
-		
+		this.helpMaterial = Material.PLAYER_HEAD;
 	}
 
 	public static boolean isInSpam = false;

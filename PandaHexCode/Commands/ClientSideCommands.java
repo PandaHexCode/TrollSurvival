@@ -20,6 +20,7 @@ public class ClientSideCommands{
 			recString = "/" + command + " §e<PlayerName> <BlockName>";
 			minArg = 2;
 			defaultMessage = false;
+			this.helpMaterial = Material.DIAMOND_BLOCK;
 		}
 		
 		@Override
@@ -40,6 +41,7 @@ public class ClientSideCommands{
 		public ClientSideSchlong(String command) {
 			super(command);
 			defaultMessage = false;
+			this.helpMaterial = Material.PINK_WOOL;
 		}
 		
 		@Override
@@ -62,6 +64,7 @@ public class ClientSideCommands{
 			super(command);
 			recString = "/" + command + " §e<PlayerName> <BlockName>";
 			minArg = 2;
+			this.helpMaterial = Material.DIAMOND_BLOCK;
 		}
 		@Override
 		public void onNewCommand(Player sender, Player otherPlayer, Command command, String[] arg){

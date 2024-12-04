@@ -24,6 +24,7 @@ public class SimpleCommands{
 	public static class Jump extends ChatCommandTarget{
 			public Jump(String command){
 				super(command);
+				this.helpMaterial = Material.PLAYER_HEAD;
 			}
 			@Override
 			public void onNewCommand(Player sender, Player otherPlayer, Command command, String[] arg){
@@ -37,6 +38,7 @@ public class SimpleCommands{
 	public static class EntitiesJump extends ChatCommand{
 		public EntitiesJump(String command) {
 			super(command);
+			this.helpMaterial = Material.CREEPER_HEAD;
 		}
 		@Override
 		public boolean onCommand(CommandSender arg0, Command arg1, String arg2, String[] arg3) {
@@ -63,6 +65,7 @@ public class SimpleCommands{
 	public static class Mlg extends ChatCommandTarget{	
 		public Mlg(String command) {
 			super(command);
+			this.helpMaterial = Material.WATER_BUCKET;
 		}
 		@Override
 		public void onNewCommand(Player sender, Player otherPlayer, Command command, String[] arg){
@@ -77,6 +80,7 @@ public class SimpleCommands{
 			super(command);
 			minArg = 2;
 			recString = "/" + command + " §e<PlayerName> <Strength>";
+			this.helpMaterial = Material.TNT;
 		}
 		
 		@Override
@@ -91,6 +95,7 @@ public class SimpleCommands{
 			super(command);
 			minArg = 2;
 			recString = "/" + command + " §e<PlayerName> <Command/Message>";
+			this.helpMaterial = Material.PLAYER_HEAD;
 		}
 		
 		@Override
@@ -108,6 +113,7 @@ public class SimpleCommands{
 			super(command);
 			minArg = 4;
 			recString = "/" + command + " §e<PlayerName> <x> <y> <z>";
+			this.helpMaterial = Material.PLAYER_HEAD;
 		}
 		
 		@Override
@@ -127,6 +133,7 @@ public class SimpleCommands{
 			super(command);
 			minArg = 2;
 			recString = "/" + command + " §e<PlayerName> <Speed(Standart=0.2)>";
+			this.helpMaterial = Material.LEATHER_BOOTS;
 		}
 		
 		@Override
@@ -140,7 +147,7 @@ public class SimpleCommands{
 	public static class Grumm extends ChatCommand{
 		public Grumm(String command) {
 			super(command);
-			
+			this.helpMaterial = Material.PIGLIN_HEAD;
 		}
 		@Override
 		public boolean onCommand(CommandSender arg0, Command arg1, String arg2, String[] arg3) {
@@ -161,6 +168,7 @@ public class SimpleCommands{
 	public static class GroundBug extends ChatCommandTarget{
 		public GroundBug(String command){
 			super(command);
+			this.helpMaterial = Material.PLAYER_HEAD;
 		}
 		@Override
 		public void onNewCommand(Player sender, Player otherPlayer, Command command, String[] arg){
@@ -171,6 +179,7 @@ public class SimpleCommands{
 	public static class CreeperSound extends ChatCommandTarget{
 		public CreeperSound(String command){
 			super(command);
+			this.helpMaterial = Material.CREEPER_HEAD;
 		}
 		@Override
 		public void onNewCommand(Player sender, Player otherPlayer, Command command, String[] arg){
@@ -181,6 +190,7 @@ public class SimpleCommands{
 	public static class Drop extends ChatCommandTarget{
 		public Drop(String command){
 			super(command);
+			this.helpMaterial = Material.DIAMOND_SWORD;
 		}
 		@Override
 		public void onNewCommand(Player sender, Player otherPlayer, Command command, String[] arg){
@@ -192,6 +202,7 @@ public class SimpleCommands{
 	public static class RandomItem extends ChatCommandTarget{
 		public RandomItem(String command){
 			super(command);
+			this.helpMaterial = Material.DIAMOND;
 		}
 		public static ItemStack item = null;
 		@Override
@@ -226,6 +237,7 @@ public class SimpleCommands{
 	            names.add("Quiz");
 	            names.add("Lucky chest");
 	            names.add("Fight");
+	    		this.helpMaterial = Material.ELYTRA;
 		}
 	
 		private ArrayList<String> names = new ArrayList<>();
@@ -288,6 +300,7 @@ public class SimpleCommands{
 		            names.add("New event");
 		            names.add("Item theft(2)");
 		            names.add("NullDamage for 10Minutes");
+		    		this.helpMaterial = Material.NETHERITE_AXE;
 			}
 		
 			private ArrayList<String> names = new ArrayList<>();

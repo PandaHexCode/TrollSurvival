@@ -1,5 +1,7 @@
 package PandaHexCode.Commands;
 
+import org.bukkit.Material;
+
 public class StandartArrayCommands{
 
 	public static ChatCommandArray freeze;
@@ -33,36 +35,36 @@ public class StandartArrayCommands{
 	
 	public static ChatCommandArray clientSidePlaceArray;
 	public static void Register(){
-		freeze = new ChatCommandArray("freeze");
-		freezeRotation = new ChatCommandArray("freezerotation");
+		freeze = new ChatCommandArray("freeze", Material.ICE);
+		freezeRotation = new ChatCommandArray("freezerotation", Material.ICE);
 		
-		disablebreak = new ChatCommandArray("disablebreak");
-		disablebuild = new ChatCommandArray("disablebuild");
-		disabledrop = new ChatCommandArray("disabledrop");
-		disablepickup = new ChatCommandArray("disablepickup");
-		disablegravity = new ChatCommandArray("disablegravity");
+		disablebreak = new ChatCommandArray("disablebreak", Material.BARRIER);
+		disablebuild = new ChatCommandArray("disablebuild", Material.BARRIER);
+		disabledrop = new ChatCommandArray("disabledrop", Material.BARRIER);
+		disablepickup = new ChatCommandArray("disablepickup", Material.BARRIER);
+		disablegravity = new ChatCommandArray("disablegravity", Material.BARRIER);
 		
-		explosionbreak = new ChatCommandArray("explosionbreak");
-		ultrabreak = new ChatCommandArray("ultrabreak");
+		explosionbreak = new ChatCommandArray("explosionbreak", Material.TNT);
+		ultrabreak = new ChatCommandArray("ultrabreak", Material.NETHERITE_PICKAXE);
 		
-		instantkillmobs = new ChatCommandArray("instantkillmobs");
-		nulldamage = new ChatCommandArray("nulldamage");
+		instantkillmobs = new ChatCommandArray("instantkillmobs", Material.NETHERITE_SWORD);
+		nulldamage = new ChatCommandArray("nulldamage", Material.WOODEN_SWORD);
 		
-		mute = new ChatCommandArray("mute");
+		mute = new ChatCommandArray("mute", Material.BARRIER);
 		
-		commandspy = new ChatCommandArray("commandspy");
+		commandspy = new ChatCommandArray("commandspy", Material.PLAYER_HEAD);
 		
-		superjumpboost = new ChatCommandArray("superjumpboost");
-		ultraknockback = new ChatCommandArray("ultraknockback");
+		superjumpboost = new ChatCommandArray("superjumpboost", Material.SLIME_BLOCK);
+		ultraknockback = new ChatCommandArray("ultraknockback", Material.WOODEN_AXE);
 		
-		limitedcreative = new ChatCommandArray("limitedcreative");
+		limitedcreative = new ChatCommandArray("limitedcreative", Material.BARRIER);
 		
-		dirtterrain = new ChatCommandArray("dirtterrain");
-		glide = new ChatCommandArray("glide");
-		movelag = new ChatCommandArray("movelag");
-		autojump = new ChatCommandArray("autojump");
+		dirtterrain = new ChatCommandArray("dirtterrain", Material.DIRT);
+		glide = new ChatCommandArray("glide", Material.ELYTRA);
+		movelag = new ChatCommandArray("movelag", Material.BLUE_ICE);
+		autojump = new ChatCommandArray("autojump", Material.PLAYER_HEAD);
 		
-		clientSidePlaceArray = new ChatCommandArray("clientsideplacearray");
+		clientSidePlaceArray = new ChatCommandArray("clientsideplacearray", Material.PLAYER_HEAD);
 	}
 	
 }

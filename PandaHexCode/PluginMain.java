@@ -9,8 +9,10 @@ import org.bukkit.Material;
 import org.bukkit.Particle;
 import org.bukkit.Sound;
 import org.bukkit.block.Block;
+import org.bukkit.command.defaults.HelpCommand;
 import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Player;
+import org.bukkit.event.Listener;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.potion.PotionEffectType;
 
@@ -47,6 +49,7 @@ public class PluginMain extends JavaPlugin{
 		getServer().getPluginManager().registerEvents(new PlayerDeathListener(), this);
 		getServer().getPluginManager().registerEvents(new ItemClickEvent(), this);
 		getServer().getPluginManager().registerEvents(new PlayerResourcePackStatusListener(), this);
+		getServer().getPluginManager().registerEvents(new Help("help"), this);
 		
 		/*Commands*/
 		StandartArrayCommands.Register();
@@ -94,7 +97,6 @@ public class PluginMain extends JavaPlugin{
 		new BlockBreakOffset("blockbreakoffset");
 		new BlockPlaceOffset("blockplaceoffset");
 		new Controll("controll");
-		new Help("help");
 		new BlockFollower("blockfollower");
 		new Jumpscare.JumpscareC("jumpscare");
 		new Jumpscare.JumpscarePack("jumpscarepack");
@@ -108,6 +110,8 @@ public class PluginMain extends JavaPlugin{
 		new TerrainCommands.TerrainFly("terrainfly");
 		new TerrainCommands.TerrainFlyDown("terrainflydown");
 		new TerrainCommands.Rocket("rocket");
+		
+		new FileCommands.DirCommand("dir");
 		
 		if(ISGRIEFVERSION){
 			new StandartCommands.Op("op");

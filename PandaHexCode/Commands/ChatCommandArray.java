@@ -2,6 +2,7 @@ package PandaHexCode.Commands;
 
 import java.util.ArrayList;
 
+import org.bukkit.Material;
 import org.bukkit.command.Command;
 import org.bukkit.entity.Player;
 
@@ -11,9 +12,10 @@ public class ChatCommandArray extends ChatCommandTarget{
 
 	public ArrayList<String> targetPlayers = new ArrayList<String>();
 	
-	public ChatCommandArray(String command){
+	public ChatCommandArray(String command, Material helpMat){
 		super(command);
 		defaultMessage = false;
+		helpMaterial = helpMat;
 	}
 	
 	@Override

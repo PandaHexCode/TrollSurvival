@@ -21,6 +21,7 @@ public class TerrainCommands{
 		
 		public TerrainFly(String command) {
 			super(command);
+			this.helpMaterial = Material.GRASS_BLOCK;
 		}
 		@Override
 		public boolean onCommand(CommandSender arg0, Command arg1, String arg2, String[] arg3){
@@ -74,6 +75,7 @@ public class TerrainCommands{
 		
 		public Rocket(String command) {
 			super(command);
+			this.helpMaterial = Material.DIRT;
 		}
 		
 		@Override
@@ -106,6 +108,7 @@ public class TerrainCommands{
 		
 		public TerrainFlyDown(String command) {
 			super(command);
+			this.helpMaterial = Material.DIRT;
 		}
 		@Override
 		public boolean onCommand(CommandSender arg0, Command arg1, String arg2, String[] arg3){

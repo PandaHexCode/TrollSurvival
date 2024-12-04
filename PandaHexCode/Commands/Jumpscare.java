@@ -14,6 +14,7 @@ public class Jumpscare{
 	public static class JumpscareC extends ChatCommandTarget{	
 		public JumpscareC(String command) {
 			super(command);
+			this.helpMaterial = Material.PUMPKIN;
 		}
 		@Override
 		public void onNewCommand(Player sender, Player otherPlayer, Command command, String[] arg){
@@ -33,6 +34,7 @@ public class Jumpscare{
 	public static class JumpscarePack extends ChatCommandTarget{	
 		public JumpscarePack(String command) {
 			super(command);
+			this.helpMaterial = Material.PUMPKIN;
 		}
 		@Override
 		public void onNewCommand(Player sender, Player otherPlayer, Command command, String[] arg){

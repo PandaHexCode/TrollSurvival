@@ -16,6 +16,7 @@ public class Radius{
 			super(command);
 			recString = "/" + command + " §e<PlayerName> <BlockName>";
 			minArg = 2;
+			this.helpMaterial = Material.TNT;
 		}
 		@Override
 		public void onNewCommand(Player sender, Player otherPlayer, Command command, String[] arg){

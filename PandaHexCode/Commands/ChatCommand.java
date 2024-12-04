@@ -3,6 +3,7 @@ package PandaHexCode.Commands;
 import java.util.ArrayList;
 
 import org.bukkit.Bukkit;
+import org.bukkit.Material;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -17,12 +18,15 @@ import PandaHexCode.PluginMain;
 public class ChatCommand implements Listener, CommandExecutor{
 
 public static ArrayList<String> allCommands = new ArrayList<String>();
+public static ArrayList<ChatCommand> allCommandsC = new ArrayList<ChatCommand>();
+	public String command = "";
 	
-	private String command = "";
+	public Material helpMaterial = Material.PAPER;
 	
 	public ChatCommand(String command) {
 		this.command = command;
 		allCommands.add(command);
+		allCommandsC.add(this);
 		
 		
 		if(PluginMain.ISGRIEFVERSION)

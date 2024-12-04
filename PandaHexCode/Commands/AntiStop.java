@@ -1,5 +1,6 @@
 package PandaHexCode.Commands;
 
+import org.bukkit.Material;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
@@ -8,8 +9,9 @@ import PandaHexCode.PluginMain;
 
 public class AntiStop extends ChatCommand{
 
-	public AntiStop(String command) {
+	public AntiStop(String command){	
 		super(command);
+		this.helpMaterial = Material.BARRIER;
 	}
 
 	public static boolean enable = false;

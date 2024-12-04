@@ -1,6 +1,7 @@
 package PandaHexCode.Commands;
 
 import org.bukkit.Bukkit;
+import org.bukkit.Material;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
@@ -14,7 +15,7 @@ public class DeathManager {
 
 		public Receive(String command) {
 			super(command);
-			
+			this.helpMaterial = Material.ROTTEN_FLESH;
 		}
 
 		@Override
@@ -44,7 +45,7 @@ public class DeathManager {
 
 		public DeathData(String command) {
 			super(command);
-			
+			this.helpMaterial = Material.ROTTEN_FLESH;
 		}
 
 		@Override

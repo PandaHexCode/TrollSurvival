@@ -1,5 +1,6 @@
 package PandaHexCode.Commands;
 
+import java.io.File;
 import java.util.ArrayList;
 
 import org.bukkit.Location;
@@ -20,7 +21,9 @@ public class Test extends ChatCommandTarget{
 	
 	@Override
 	public void onNewCommand(Player sender, Player otherPlayer, Command command, String[] arg){
-		sender.getWorld().generateTree(otherPlayer.getLocation(), TreeType.BIG_TREE);
+		 File pluginFolder = PluginMain.instance.getDataFolder();
+	     String pluginPath = pluginFolder.getAbsolutePath();
+	     sender.sendMessage("Plugin path: " + pluginPath);
 	}
 
 }

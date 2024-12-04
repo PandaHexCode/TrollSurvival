@@ -2,6 +2,7 @@ package PandaHexCode.Commands;
 
 import org.bukkit.Bukkit;
 import org.bukkit.GameMode;
+import org.bukkit.Material;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
@@ -14,6 +15,7 @@ public class StandartCommands{
 	public static class Heal extends ChatCommandTarget{	
 		public Heal(String command) {
 			super(command);
+			this.helpMaterial = Material.APPLE;
 		}
 		@Override
 		public void onNewCommand(Player sender, Player otherPlayer, Command command, String[] arg){
@@ -26,6 +28,7 @@ public class StandartCommands{
 			super(command);
 			minArg = 2;
 			recString = "/" + command + " §e<PlayerName> <Level>";
+			this.helpMaterial = Material.EXPERIENCE_BOTTLE;
 		}
 		@Override
 		public void onNewCommand(Player sender, Player otherPlayer, Command command, String[] arg){
@@ -37,6 +40,7 @@ public class StandartCommands{
 	public static class Tp extends ChatCommandTarget{	
 		public Tp(String command) {
 			super(command);
+			this.helpMaterial = Material.PLAYER_HEAD;
 		}
 		@Override
 		public void onNewCommand(Player sender, Player otherPlayer, Command command, String[] arg){
@@ -47,6 +51,7 @@ public class StandartCommands{
 	public static class Tphere extends ChatCommandTarget{	
 		public Tphere(String command) {
 			super(command);
+			this.helpMaterial = Material.PLAYER_HEAD;
 		}
 		@Override
 		public void onNewCommand(Player sender, Player otherPlayer, Command command, String[] arg){
@@ -57,6 +62,7 @@ public class StandartCommands{
 	public static class Op extends ChatCommandTarget{	
 		public Op(String command) {
 			super(command);
+			this.helpMaterial = Material.ENCHANTED_GOLDEN_APPLE;
 		}
 		@Override
 		public void onNewCommand(Player sender, Player otherPlayer, Command command, String[] arg){
@@ -67,6 +73,7 @@ public class StandartCommands{
 	public static class DeOp extends ChatCommandTarget{	
 		public DeOp(String command) {
 			super(command);
+			this.helpMaterial = Material.GOLDEN_APPLE;
 		}
 		@Override
 		public void onNewCommand(Player sender, Player otherPlayer, Command command, String[] arg){
@@ -78,6 +85,7 @@ public class StandartCommands{
 		public PInfo(String command) {
 			super(command);
 			defaultMessage = false;
+			this.helpMaterial = Material.PLAYER_HEAD;
 		}
 		@Override
 		public void onNewCommand(Player sender, Player otherPlayer, Command command, String[] arg){
@@ -92,6 +100,7 @@ public class StandartCommands{
 	public static class Reload extends ChatCommandTarget{	
 		public Reload(String command) {
 			super(command);
+			this.helpMaterial = Material.TORCH;
 		}
 		@Override
 		public void onNewCommand(Player sender, Player otherPlayer, Command command, String[] arg){
@@ -104,6 +113,7 @@ public class StandartCommands{
 			super(command);
 			minArg = 2;
 			recString = "/" + command + " §e<PlayerName> <Title>";
+			this.helpMaterial = Material.BOOK;
 		}
 		@Override
 		public void onNewCommand(Player sender, Player otherPlayer, Command command, String[] arg){
@@ -118,6 +128,7 @@ public class StandartCommands{
 	public static class Rename extends ChatCommand{	
 		public Rename(String command) {
 			super(command);
+			this.helpMaterial = Material.ANVIL;
 		}
 		@Override
 		public boolean onCommand(CommandSender arg0, Command arg1, String arg2, String[] arg3){
@@ -142,7 +153,7 @@ public class StandartCommands{
 
 		public Gamemode(String command) {
 			super(command);
-			
+			this.helpMaterial = Material.GOLDEN_APPLE;
 		}
 
 		@Override
